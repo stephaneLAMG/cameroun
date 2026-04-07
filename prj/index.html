@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wordeul</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Wordeul</h1>
+    <div class="meta">
+      <button id="btnNew" type="button">Nouvelle partie</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="grid" class="grid" aria-label="Grille"></section>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+
+    <section class="keyboard" aria-label="Clavier">
+      <div class="kb-row" data-row="1"></div>
+      <div class="kb-row" data-row="2"></div>
+      <div class="kb-row" data-row="3"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

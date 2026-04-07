@@ -1,0 +1,141 @@
+:root{
+  --bg:#0f1115;
+  --fg:#e7eaf0;
+  --muted:#9aa3b2;
+
+  --tile:#1b1f2a;
+  --tile-border:#2a3141;
+
+  --absent:#3a3f4b;   /* gris */
+  --present:#b59f3b;  /* jaune */
+  --correct:#538d4e;  /* vert */
+
+  --key:#22283a;
+  --key-fg:#e7eaf0;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--fg);
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 16px;
+  border-bottom:1px solid #1d2230;
+}
+.topbar h1{
+  margin:0;
+  letter-spacing:1px;
+}
+.topbar button{
+  background:#2b3350;
+  color:var(--fg);
+  border:1px solid #394267;
+  padding:8px 10px;
+  border-radius:10px;
+  cursor:pointer;
+}
+.topbar button:hover{ filter:brightness(1.1); }
+
+.container{
+  max-width:520px;
+  margin:0 auto;
+  padding:18px 14px 28px;
+}
+
+.grid{
+  display:grid;
+  gap:10px;
+  justify-content:center;
+  margin:18px auto 10px;
+}
+
+.row{
+  display:grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap:10px;
+}
+
+.tile{
+  width:56px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--tile);
+  border:2px solid var(--tile-border);
+  border-radius:10px;
+  font-weight:800;
+  font-size:24px;
+  text-transform:uppercase;
+  user-select:none;
+}
+
+.tile.filled{
+  border-color:#4a5570;
+}
+
+.tile.correct{
+  background:var(--correct);
+  border-color:var(--correct);
+}
+.tile.present{
+  background:var(--present);
+  border-color:var(--present);
+}
+.tile.absent{
+  background:var(--absent);
+  border-color:var(--absent);
+}
+
+.message{
+  min-height:24px;
+  text-align:center;
+  margin:10px 0 18px;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.keyboard{
+  display:grid;
+  gap:10px;
+}
+.kb-row{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  flex-wrap:nowrap;
+}
+
+.key{
+  background:var(--key);
+  color:var(--key-fg);
+  border:1px solid #2c3350;
+  border-radius:12px;
+  padding:12px 10px;
+  min-width:34px;
+  text-align:center;
+  font-weight:700;
+  cursor:pointer;
+  user-select:none;
+}
+
+.key.wide{
+  min-width:76px;
+}
+
+.key.correct{ background:var(--correct); border-color:var(--correct); }
+.key.present{ background:var(--present); border-color:var(--present); }
+.key.absent{ background:var(--absent); border-color:var(--absent); }
+
+@media (max-width:420px){
+  .tile{ width:48px; height:48px; font-size:22px; }
+  .key{ padding:11px 9px; min-width:30px; }
+  .key.wide{ min-width:64px; }
+}
